@@ -1,0 +1,16 @@
+<h2>{{ tittle }}</h2>
+<form action="{% url 'volumen:send' %}" method="post">
+    {% csrf_token %}
+
+    {% if error_message %}
+    <p style="color: red;">{{ error_message }}</p>
+    {% endif %}
+
+    <label for="diametro">Diámetro</label>
+    <input type="text" name="diametro">
+
+    <label for="altura">Altura</label>
+    <input type="text" name="altura">
+
+    <input type="submit" value="Enviar">
+</form>
